@@ -1,0 +1,35 @@
+
+@import url('https://fonts.googleapis.com/css?family=VT323');
+body{
+    font-family: 'VT323', monospace;
+    font-size: 30px;
+}
+.wrapper{
+    text-align: center;
+    margin: 0 auto;
+}
+a{
+    text-decoration: none;
+}
+.tab{
+    margin: 0 auto;
+}
+
+.image{
+    margin-top: 3%;
+    font-size: 20px;
+}
+
+.project_desc{
+    margin: 3% auto;
+    width: 75%;
+}
+.project_desc .title{
+    font-size: 40px;
+}
+.project_desc img{
+    width: 60%;
+    height: 60%;
+}
+
+
