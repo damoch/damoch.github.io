@@ -1,4 +1,4 @@
-var BENCHY = "https://www.thingiverse.com/download:1223854";
+var BENCHY = "./data/3DBenchy.stl";
 var helper = null;
 var rotate = true;
 var model = null;
