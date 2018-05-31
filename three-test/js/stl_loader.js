@@ -46,6 +46,7 @@ THREE.STLLoader.prototype = {
 
 		var loader = new THREE.FileLoader( scope.manager );
 		loader.setResponseType( 'arraybuffer' );
+		loader.crossOrigin = '';
 		loader.load( url, function ( text ) {
 
 			try {
