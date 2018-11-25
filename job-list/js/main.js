@@ -22,6 +22,7 @@ const jobsFirstWeek = { //person : job
 
 function start(){
     var currentDate = Date.now();
+    handleXMASS(currentDate);
     var timeDiff = Math.abs(currentDate - startDate.getTime());
     
     var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
@@ -65,4 +66,13 @@ function getNewJobsList(weeksPassed){
         currentJobs[key] = newPriority;
     }
     return currentJobs;
+}
+
+function handleXMASS(date){
+    if(new Date(date).getMonth() == 11){
+        startSnowing();
+    }
+    else{
+        document.getElementsByTagName('canvas')[0].outerHTML = "";
+    }
 }
