@@ -45,7 +45,7 @@ function calculateNewJobs(weeksPassed){
 }
 
 function getCellWithText(text){
-    var cell = document.createElement("TH");
+    var cell = document.createElement("TD");
     var node = document.createTextNode(text);
     cell.appendChild(node);
     return cell;
