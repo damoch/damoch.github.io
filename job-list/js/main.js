@@ -1,7 +1,7 @@
 const startDate = new Date(2018, 10, 11);
 const jobs = {
-    3 : "sprzątanie",
-    2 : "wyrzucanie śmieci",
+    3 : "sprzątanie łazienki",
+    2 : "sprzątanie kuchni",
     1 : "zakupy",
     0 : "odpoczynek"
 };
