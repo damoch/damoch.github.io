@@ -1,0 +1,19 @@
+#title{
+    text-align: center;
+}
+
+#newFollowerDesc{
+    visibility: hidden;
+}
+
+.tab{
+    float: left;
+    width: 33%;
+}
+.operationStatus{
+    width: 100%;
+    float: right;
+}
+body{
+    background: white;
+}
