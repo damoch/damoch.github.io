@@ -1,0 +1,30 @@
+h2{
+    text-align: center;
+}
+select{
+    width: 300px;
+}
+#title{
+    text-align: center;
+}
+
+#newFollowerDesc{
+    visibility: hidden;
+}
+.dailyCostOK{
+    color: green;
+}
+.dailyCostWRONG{
+    color: red;
+}
+.tab{
+    /* float: left; */
+    /* width: 33%; */
+}
+.operationStatus{
+    width: 100%;
+    float: right;
+}
+body{
+    background: white;
+}
