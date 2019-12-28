@@ -1,13 +1,23 @@
 h2{
     text-align: center;
+    color: #FFFFFF;
+    text-shadow: 4px 3px 0 #7A7A7A;
 }
 select{
     width: 300px;
 }
 #title{
     text-align: center;
+    color: #FFFFFF;
+    text-shadow: 4px 3px 0 #7A7A7A;
 }
-
+#pentagam{
+    text-align: center;
+    margin-left: 47%;
+}
+#logTextArea{
+    margin-left: 38%;
+}
 #newFollowerDesc{
     visibility: hidden;
 }
@@ -21,7 +31,21 @@ select{
     width: 100%;
     float: right;
 }
-body{
-    background: white;
+.game{
+    color: white;
+    background: rgb(194,0,137);
+    background: linear-gradient(90deg, rgba(194,0,137,1) 0%, rgba(120,9,121,1) 42%, rgba(0,212,255,1) 100%);
     overflow-x: hidden; overflow-y: scroll; -webkit-overflow-scrolling: touch;
+}
+
+.punished{
+    color: black;
+    background: white;
+}
+
+#credits{
+    text-align: center;
+}
+a {
+    color: red;
 }

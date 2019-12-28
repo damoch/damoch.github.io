@@ -2,8 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Evil Cult Managment System ver. 1.1</title>
+    <title>Evil Cult Management System ver. 1.2</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" href="favicon.ico">
     <script src="js/randoms.js"></script>
     <script src="js/rules.js"></script>
     <script src="js/person.js"></script>
@@ -12,14 +13,18 @@
     <script src="js/other/spookyEvents.js"></script>
     <script src="js/main.js"></script>
   </head>
-  <body onload="init()">
-    <h1 id="title">Evil Cult Managment System v1.1</h1>
+  <body onload="init()" class="game">
+
+    <h1 id="title">Evil Cult Management System v1.2</h1>
+    <img id="pentagam" src="gifs/animated-gifs-pentagrams-008.gif">
+    <h3 id="title">© CultSoft 1998 All Rights Reserved</h3>
 
     <div id="sacrificesTab" class="tab">
         <h2>Sacrifices</h2>
         Sacrificing makes Evil Gods happy, and less likely to unleash their infinite anger upon the World.<br>
         Keep in mind, that you have to satisfy weekly sacrifices quota!<br>
         <span id="dailyCostText"></span><br>
+        <span id="topSacrificesQuotaText"></span><br>
         Select victim:
         <select id="victimSelect">
         </select> 
@@ -58,22 +63,25 @@
     </div>
         <div>
                 <h2>Operation status</h2>
-                Evil gods satisfaction: <progress value="22" max="100" id="godsSatisfaction"> </progress><br>
-                Sacrifices quota for this week <span id="sacrificesLeftField"></span><br>
+                Evil Gods satisfaction: <progress value="22" max="100" id="godsSatisfaction"> </progress><br>
+                Sacrifices quota for this week: <span id="sacrificesLeftField"></span><br>
                 Money: <span id = "moneyField"></span>$<br>
                 Day: <span id = "day"></span>, week: <span id = "week"></span><br>
                 <button onclick="nextDay()">Next day</button>
         </div>
         <div>
-            <h3>Operation log</h3>
+            <h2>Operation log</h2>
             <textarea rows="15" cols="40" readonly="true" id="logTextArea">
             </textarea>
         </div>
-        <div>
+        <div id="credits">
             <h2>Credits</h2>
             Gameplay: <a target="_blank" rel="noopener noreferrer" href="https://damoch.github.io">kszaku</a><br>
             ASCII arts: <a href="http://www.asciiworld.com/-Death-Co-.html">ASCII Word</a><br>
             SFX: <a target="_blank" rel="noopener noreferrer" href="https://opengameart.org/users/qubodup">qubodup</a> <a target="_blank" rel="noopener noreferrer" href="https://opengameart.org/users/cadere-sounds">Cadere Sounds</a> <a href="https://opengameart.org/users/vinrax">Vinrax</a><br>
+            Favicon: <a target="_blank" rel="noopener noreferrer" href="https://www.favicon.cc">favicon.cc</a><br>
+            Gifs: <a target="_blank" rel="noopener noreferrer" href="https://www.gifs-paradise.com">gifs-paradise.com</a><br>
+            <br>
             Made for Ludum Dare 43 <br>
             <a href="https://damoch.github.io/ecms-jam-version">Jam version (not compatible with mobile devices)</a><br>
             <a href="https://github.com/damoch/evil-cult-accountancy">GitHub repo</a><br>

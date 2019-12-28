@@ -9,6 +9,7 @@ var logTextArea;
 var newFollowerDesc;
 var dailyCostText;
 var currentFundsText;
+var topSacrificesQuotaText;
 
 var newName;
 var newSurname;
@@ -19,6 +20,7 @@ var newSpeaking;
 var selectSacrifice;
 var priestSelect;
 var henchmanSelect;
+var gameOver = false;
 
 const idOfPersonSeparator = ':';
 const hungryText = "(hungry)";
@@ -70,6 +72,7 @@ function init(){
     newSpeaking = document.getElementById("newSpeaking");
     dailyCostText = document.getElementById("dailyCostText");
     currentFundsText = document.getElementById("currentFundsText");
+    topSacrificesQuotaText = document.getElementById("topSacrificesQuotaText");
 
     GameData.godsSacrificesDemand = getRndInteger(Rules.MINIMUM_SACRIFICES_FOR_WEEK, Rules.MAXIMUM_SACRIFICES_FOR_WEEK);
     GameData.money = Rules.STARTING_MONEY;
@@ -80,7 +83,7 @@ function init(){
     logTextArea.value = "";
 
     window.onbeforeunload = function (e) {
-        if(window.mobilecheck()){
+        if(window.mobilecheck() || gameOver){
             return;
         }
         var e = e || window.event;
@@ -107,7 +110,8 @@ function updateOperationStatus(){
     dayField.textContent = GameData.day;
     weekField.textContent = GameData.week;
     sacrificesLeftField.textContent = GameData.godsSacrificesDemand;
-    currentFundsText.innerHTML = `Money: <b>$${GameData.money}</b>`
+    currentFundsText.innerHTML = `Money: <b>$${GameData.money}</b>`;
+    topSacrificesQuotaText.innerHTML = `Sacrifices quota for this week: ${GameData.godsSacrificesDemand}`;
 }
 
 function refreshPriests(){
@@ -205,7 +209,7 @@ function nextDay(){
     updateSatisfactionSlider();
 
 
-    if(GameData.godsSatisfaction <= Rules.SPOOKY_EVENTS_OCCURENCE_TRESHOLD){
+    if(GameData.godsSatisfaction <= Rules.SPOOKY_EVENTS_OCCURENCE_TRESHOLD && !gameOver){
         startRandomSpookyEvent();
     }
 }
@@ -287,6 +291,8 @@ function findNewFollower(){
 }
 
 function punishPlayer(){
+    gameOver = true;
+    document.body.className = "punished";
     document.body.innerHTML = badasssSkull;
     changeColors();
 }

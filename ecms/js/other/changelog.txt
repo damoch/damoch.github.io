@@ -1,8 +1,20 @@
-ver 1.0
-    - The LD 43 Jam version.
+ver 1.2
+visual:
+    - background is now gradient
+    - cool shadow for headers
+    - added favicon
+    - added cool pentegram gif
+technical:
+    - added field displaying daily cost of feeding prisoners
+    - added field showing, how much money does player have
+fixes:
+    - fixed scrolling issues on mobile devices 
+    - fixed typo in title ;)
 ver 1.1
     - Added spawning random followers. That makes game a bit less tedious, when all followers are dead or gone,
     - The recruitment action must be finished before next day starts, or else it will be aborted.
     - It's possible to paste text in "priest speech textfield". However, a 600 characters limit is applied.
     - Penalty for not meeting Evil Gods sacrifices quota is lower.
     - UI seen some minor improvements. I'm still working on it...
+ver 1.0
+    - The LD 43 Jam version.
