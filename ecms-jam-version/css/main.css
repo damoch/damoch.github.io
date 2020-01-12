@@ -1,19 +1,89 @@
+body{
+    font-family: 'IM Fell French Canon SC', serif;
+}
+h2{
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 4px 3px 0 #7A7A7A;
+}
+select{
+    width: 300px;
+}
 #title{
     text-align: center;
+    color: #FFFFFF;
+    text-shadow: 4px 3px 0 #7A7A7A;
 }
-
+#pentagam{
+    text-align: center;
+    margin-left: 47%;
+}
 #newFollowerDesc{
     visibility: hidden;
 }
-
-.tab{
-    float: left;
-    width: 33%;
+.dailyCostOK{
+    color: green;
+}
+.dailyCostWRONG{
+    color: red;
 }
 .operationStatus{
     width: 100%;
     float: right;
 }
-body{
+.game{
+    color: white;
+    overflow-x: hidden; 
+    overflow-y: scroll; 
+    -webkit-overflow-scrolling: touch;
+}
+
+.gradient-bg{    
+    background: rgb(194,0,137);
+    background: linear-gradient(90deg, rgba(194,0,137,1) 0%, rgba(120,9,121,1) 42%, rgba(0,212,255,1) 100%);
+}
+
+.punished{
+    color: black;
     background: white;
+}
+
+.spooky{
+    background-color: white;
+}
+
+#credits{
+    text-align: center;
+}
+a {
+    color: red;
+}
+.sidestatus{
+    width: 33%; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    margin-left: 66%;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+    color: black;
+}
+.sidestatus h2{
+    color: black;
+    text-shadow: none;
+
+}
+.main{
+    width: 66%; 
+    /* margin-left:33%; */
+}
+#speechTextArea{
+    width:80%;
+    margin-left: 10%;
+}
+#logTextArea{
+    width:100%;
+}
+.status-modal button{
+    width:100%;
 }

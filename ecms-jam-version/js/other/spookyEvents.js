@@ -54,7 +54,7 @@ function makeSpookyTitle(){
         if(currTIndx > spookyT.length - 1){
             setTimeout(function(){
                 title.textContent = startingStr;
-                title.style.color = "black";
+                title.style.color = "white";
             }, 3000);
             clearInterval(id);
         }
@@ -63,10 +63,16 @@ function makeSpookyTitle(){
 
 function spookyBackground(){
     var defaultBackground = "white";
-    var defaultFont = "black";
     document.body.style.color = "white";
+    const defaultBodyClass = document.body.className;
+    document.body.className = "spooky";
     var id = setInterval(flipBackgroundColors, 100);
-    setTimeout(function(){clearTimeout(id); document.body.style.backgroundColor = defaultBackground; document.body.style.color = defaultFont;}, 2000);
+    setTimeout(function(){
+        clearTimeout(id); 
+        document.body.style.backgroundColor = defaultBackground; 
+        document.body.className = defaultBodyClass;
+    }, 
+    2000);
 
 }
 
