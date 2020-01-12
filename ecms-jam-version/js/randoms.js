@@ -10,21 +10,7 @@ const RandomData = {
     
     spookyTexts : [ "There is no escape, insect", "BLOOD BLOOD BLOOD BLOOD", "I WANT YOUR SOUL", "SOONER OR LATER WE GONNA CUT YOU DOWN"],
 
-    spookySounds: ["snd/scream_horror1.mp3", "snd/excitedhorrorsound.wav", "snd/noise.mp3", "snd/qubodup-BigMonster01.flac", "snd/qubodup-BigMonster02.flac", "snd/radio_death.mp3"],
-    words: [
-
-        "jungle", "annual", "digital", "combine",
-        "inhibition", "layer", "gear", "staircase",
-        "holiday", "invite", "seek", "ethnic",
-        "color-blind","point", "active", "pity",
-        "platform", "native", "tradition", "example",
-        "contribution", "freight", "eaux", "cover",
-        "snub", "gossip", "fair", "concession",
-        "yard", "banner", "fibre", "distributor",
-        "ceiling", "predator", "electronics", "hotdog",
-        "norm", "orientation", "drill", "confine"
-
-    ]
+    spookySounds : ["snd/scream_horror1.mp3", "snd/excitedhorrorsound.wav", "snd/noise.mp3", "snd/qubodup-BigMonster01.flac", "snd/qubodup-BigMonster02.flac", "snd/radio_death.mp3"]
 }
 
 function randomName(){
@@ -42,13 +28,6 @@ function randomSpooky(hasUnicode){
 
 function randomSpookySound(){
     return RandomData.spookySounds[getRndInteger(0, RandomData.spookySounds.length)];
-}
-
-function randomEvilWord(){
-    return Rules.EVIL_WORDS[getRndInteger(0, Rules.EVIL_WORDS.length)];
-}
-function randomWord(){
-    return RandomData.words[getRndInteger(0, RandomData.words.length)];
 }
 
 function getRndInteger(min, max) {
