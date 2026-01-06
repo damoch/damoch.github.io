@@ -51,6 +51,21 @@ h2 { font-size: clamp(22px, 3vw, 34px); }
   margin-inline: auto;
 }
 
+/* === IMPORTANT FIXES ===
+   Prevent grid/flex children from collapsing due to min-content sizing issues */
+.split > *,
+.landing > *,
+.contact-grid > * {
+  min-width: 0;
+}
+
+/* Prevent long strings from forcing layout collapse */
+.landing-copy,
+.split-copy,
+.contact-copy {
+  overflow-wrap: anywhere;
+}
+
 /* ===== Header / Navigation ===== */
 .site-header {
   position: sticky;
@@ -176,16 +191,18 @@ h2 { font-size: clamp(22px, 3vw, 34px); }
 .landing {
   padding: 0;
   background: var(--mint);
-}
-
-.landing {
   display: grid;
   grid-template-columns: 1fr;
 }
 
 .landing-media {
   min-height: clamp(260px, 45vh, 520px);
-  background: url("assets/image3.png") no-repeat center center / cover;
+  width: 100%;
+  /* Use non-shorthand background props to avoid accidental overrides */
+  background-image: url("assets/image3.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .landing-copy {
@@ -199,7 +216,8 @@ h2 { font-size: clamp(22px, 3vw, 34px); }
 
 @media (min-width: 900px) {
   .landing {
-    grid-template-columns: 3fr 2fr;
+    /* minmax(0, …) prevents the other column collapsing to 0px */
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
     align-items: stretch;
   }
 
@@ -229,16 +247,23 @@ h2 { font-size: clamp(22px, 3vw, 34px); }
 .split-media {
   border-radius: var(--radius);
   min-height: clamp(220px, 35vh, 520px);
-  background: #eee;
+  width: 100%;
+  background-color: #eee;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .offer-media {
-  background: url("assets/image4.png") no-repeat center center / cover;
-}
-
+   background-image: url("assets/image4.png"); 
+   background-position: top center;
+   min-height: 800px;
+  }
 .classes-media {
-  background: url("assets/cwiczenia.png") no-repeat center center / cover;
-}
+   background-image: url("assets/cwiczenia.png"); 
+   background-position: top center;
+   min-height: 800px;
+  }
 
 .split-reverse .split-media { order: -1; }
 
@@ -261,11 +286,19 @@ h2 { font-size: clamp(22px, 3vw, 34px); }
 
 @media (min-width: 900px) {
   .split {
-    grid-template-columns: 3fr 2fr;
+    /* minmax(0, …) prevents media column collapsing to 0px */
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
   }
   .split-reverse .split-media { order: 0; }
   .split-reverse .split-copy { order: 2; }
 }
+
+/* Optional: restore your "small" offer image on mobile if you have it */
+/*
+@media (max-width: 899px) {
+  .offer-media { background-image: url("assets/image4-small.png"); }
+}
+*/
 
 /* ===== Prices ===== */
 .prices {
@@ -312,9 +345,7 @@ h2 { font-size: clamp(22px, 3vw, 34px); }
 }
 
 /* ===== Reviews ===== */
-.reviews {
-  background: white;
-}
+.reviews { background: white; }
 
 .reviews-inner {
   max-width: var(--max);
@@ -339,15 +370,11 @@ h2 { font-size: clamp(22px, 3vw, 34px); }
 }
 
 @media (min-width: 800px) {
-  .review-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+  .review-grid { grid-template-columns: 1fr 1fr; }
 }
 
 /* ===== Contact ===== */
-.contact {
-  padding-bottom: 0;
-}
+.contact { padding-bottom: 0; }
 
 .contact-grid {
   max-width: var(--max);
@@ -410,7 +437,8 @@ a.media:hover img {
 
 @media (min-width: 900px) {
   .contact-grid {
-    grid-template-columns: 1fr 1fr;
+    /* minmax(0, …) prevents either column from collapsing */
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 }
 
